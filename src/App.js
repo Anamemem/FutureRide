@@ -9,7 +9,7 @@ import Driver from './Layouts/Driver';
 
 function App() {
   return (
-    <Router>
+    <Router> 
 <div className="App">
   <Nav />
   <Routes>
