@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Home from './Component/Home';
 import About from './Component/About';
@@ -12,15 +11,12 @@ function App() {
   return (
     <Router>
 <div className="App">
+  <Nav />
   <Routes>
-  <Route path="/" element={<DefaultLayout />}>
-  <Route index element={<Home />} /> 
-  </Route>
- 
-  <Route path="/driver/" element={<Driver />} >
-  <Route path="about" element={<About />} /> 
-
-  </Route>
+  <Route path="/default" element={<DefaultLayout />} />
+  <Route path="/" element={<Home />} />  
+  <Route path="/driver" element={<Driver />} />
+  <Route path="/about" element={<About />} /> 
 
 
   
