@@ -4,6 +4,12 @@ body{
   font-family: 'Macondo', cursive;
 
 }
+
+.hw{
+  width: 1683px;
+  height: 100vh;
+  
+}
 ::-webkit-scrollbar {
   width: 20px;
 }
@@ -24,10 +30,14 @@ body{
 
 
 .rude{
-width: 15%;
+width: 25%;
 margin-left: 2%;
 
 }
+.rudes{
+  width: 40%;
+  margin-left: 2%;
+  }
 .fdf{
   height: 05px;
   width: -599px;
@@ -37,6 +47,7 @@ margin-left: 2%;
   background: #103974;
 box-shadow: 4px 12px 102px 77px rgba(0, 0, 0, 0.25);
 border-radius: 62px;
+
 }
 .text1{
   font-family: 'Poppins', sans-serif;  
@@ -48,10 +59,32 @@ padding: 15px;
 color: #FFFFFF;
 
 }
+.good{
+  margin-left: 30%;
+}
+.goods{
+  margin-left: 10%;
+}
+.good5{
+  margin-left: 17%;
+}
 @media only screen and (max-width: 600px) {
   .text {
     font-size: 2px;
     
+  }.good5{
+    margin-top: 6%;
+    margin-left: 0px;
+  }
+ 
+  .hw{
+   display: none;
+  }
+  .good {
+    margin: 0px;
+  }
+  .goods {
+    margin: 0px;
   }
   .rude{
     align-items: center;
@@ -65,6 +98,20 @@ color: #FFFFFF;
   .pro{
     margin-bottom: 15%;
     margin-top: 10%;
+  }
+  h2.dew{
+    margin-top: 40px;
+    margin-left: 5%;
+    
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 45px;
+/* identical to box height */
+
+
+color: #000000;
   }
 }
 .bras{
@@ -105,6 +152,17 @@ font-style: normal;
 font-weight: 200;
 font-size: 18px;
 line-height: 23px;
+margin-top: 8px;
+
+color: gray;
+}
+.de{
+  font-family: 'PT Sans', sans-serif;
+font-style: normal;
+font-weight: 200;
+font-size: 18px;
+line-height: 23px;
+margin-top: 8px;
 
 color: gray;
 }
@@ -130,7 +188,7 @@ padding: 15px;
 color: #FFFFFF;
 }
 .btn{
-  width: 294px;
+  width: 274px;
 height: 70px;
 background: #1B1481;
 font-family: 'Poppins', sans-serif;
@@ -150,15 +208,27 @@ height: 100vh;
 
 }
 .boy{
-  font-family: '';
+  font-family: 'poppins';
 font-style: normal;
-font-weight: 700;
-font-size: 34px;
-line-height: 40px;
+font-weight: bold;
+font-size: 25px;
+
 /* identical to box height */
+margin-top: 15%;
 
 
 color: #000000;
+}
+.boys{
+
+  font-family: 'Raleway';
+
+  font-weight: 900;
+  font-size: 35px;
+ 
+  /* identical to box height */
+ 
+  color: #000000;
 }
 .fred{
   font-family: '';
@@ -170,13 +240,54 @@ line-height: 23px;
 color: #000000;
 
 }
+.dew{
+  margin-left: 200px;
+  margin-top: -0px;
+  
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 45px;
+/* identical to box height */
+
+
+color: #000000; 
+}
+.freda{
+  
+font-family: 'Raleway';
+font-style: normal;
+font-weight: 100;
+font-size: 20px;
+line-height: 28px;
+
+color: gray;
+
+}
+.flex-container {
+  display: flex;
+  align-items: stretch;
+  background-color: #f1f1f1;
+}
+
+.flex-container > div {
+  background-color: DodgerBlue;
+  color: white;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
 .buttons{
-  width: 250px;
-height: 54px;
+  width: 370px;
+height: 60px;
 border-radius: 7px;
 cursor: pointer;
 background-color: #262626;
 border: none;
+color: white;
+font-size: 18px;
 }
 
 .bgt{
