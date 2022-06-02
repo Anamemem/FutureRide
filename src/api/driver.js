@@ -1,7 +1,7 @@
 import axios from "axios"
 import { parseError } from "./mixin"
 
-const URL = '/resource'
+const URL = '/order'
 
 
 
@@ -18,9 +18,9 @@ export const createResourceAPI = async (data) => {
   }
 }
 
-export const getResourceAPI = async (filterString) => {
+export const getActiveDriverAPI = async (filterString) => {
   try {
-    const response = await axios.get(`${URL}${filterString}`)
+    const response = await axios.get(`${URL}/driver/active${filterString}`)
     if (response.status === 200) {
       return response.data.data || response.data.message
     }
@@ -30,6 +30,19 @@ export const getResourceAPI = async (filterString) => {
     return parseError(error)
   }
 }
+export const UpdateLocationAPI = async (data) => {
+  try {
+    const response = await axios.put(`${URL}/driver/active`,data)
+    if (response.status === 200) {
+      return response.data.data || response.data.message
+    }
+    return parseError(response)
+  } catch (error) {
+    console.log(error)
+    return parseError(error)
+  }
+}
+
 
 export const getMyResourceAPI = async (user) => {
   try {

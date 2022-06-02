@@ -1,18 +1,20 @@
 import {  parseResponse } from "./mixin"
 // import { getProfileAPI, getUsersAPI, updateProfileAPI } from '../api/user'
-import { createResourceAPI, getResourceAPI, deleteResourceAPI, getMyResourceAPI } from "../api/resource"
+import {  deleteResourceAPI, getMyResourceAPI } from "../api/driver"
+import { getActiveDriverAPI } from "../api/driver"
+import { UpdateLocationAPI } from "../api/driver"
 
 
 
 
 
-export const createResource = async (data) => {
-    const response = await createResourceAPI(data)
+export const UpdateLocation = async (data) => {
+    const response = await UpdateLocationAPI(data)
     return parseResponse(response)
   }
 
 
-export const getAllResources = async (filter) => {
+export const getActiveDriver = async (filter) => {
   filter = filter || { } 
 	
 	let filterString = ''
@@ -22,7 +24,7 @@ export const getAllResources = async (filter) => {
 	}
 	filterString = filterString ? `?${filterString.slice(0, -1)}` : filterString
 
-    const response = await getResourceAPI(filterString)
+    const response = await getActiveDriverAPI(filterString)
     return parseResponse(response)
   }
 

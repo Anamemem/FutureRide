@@ -1,7 +1,7 @@
 // import "./login.css";
 import { TextField, Button,CircularProgress, Alert } from "@mui/material";
 import { useState } from 'react';
-import Grid from '@mui/material/Grid';
+import { Grid, Box } from '@mui/material/';
 // import Box from '@mui/material/Box';
 import Nav from '../Component/Nav'
 import InputAdornment from '@mui/material/InputAdornment';
@@ -61,40 +61,20 @@ export default function About(props) {
     <div>
 <Nav />
  
-    <Grid container  >
-      
-    <Grid sx={{  display:{xs:'none', md:'flex'}}} item container    xs={12}  md={6} >
-   
-   <Grid  sx={{px: 8,  pt: 10 }} style={{ height:"100vh", width:'120%'}}>
-  
-     
-     <img style={{ height: '100%'}}  src="https://res.cloudinary.com/dekbvdqnb/image/upload/v1653308496/online-booking-concept-laptop-with-bus-tickets-white-background_476612-12604-removebg-preview_1_bhtssj.png
-" alt=""/>
-    
-    
-   </Grid>
-
-
-
-  
-
-
-
-</Grid>
-    <Grid  sx={{px:{xs:3,md:20, backgroundColor: 'whitesmoke',minHeight: '100vh' }}} item container  alignContent="center" xs={12}  md={6}
-      >
-      <Grid item > 
-    
-    
-    <h2 className="boy" >
-    Register individual Account
-         </h2>
-         <p className="fred">For the purpose of regulation,your details <br />
-are require</p>
-   
-   
-       
-<form onSubmit={submit}>
+<Grid container  sx={{ minHeight: '100vh' }} className='logs' >
+<Grid item xs={12} sx={{  pt: 15,}}>
+<Box
+        sx={{
+          mx: 'auto',
+          width: 300,
+          height: 320,
+          p: 5,
+        
+          background: 'white'
+         }}>
+           <h2>Login</h2>
+           <div className="sew"></div>
+   <form onSubmit={submit}>
       {error && (
               <Alert severity="error">
                 {error}
@@ -108,7 +88,7 @@ are require</p>
              onChange={handleChange}
              fullWidth
              margin="normal"
-             variant="filled"
+           
            />
             
            <TextField
@@ -120,7 +100,7 @@ are require</p>
              type={ password ? 'text' : 'password' }
              autoComplete="current-password"
              margin="normal"
-             variant="filled"
+            
              InputProps={{
              endAdornment:
                <InputAdornment position="end">
@@ -130,23 +110,26 @@ are require</p>
            /> 
           
            </form>
-         
-      </Grid>
-      <Grid container
-             justifyContent="space-evenly"
-             alignItems="center" item xs={12} sx={{ mt: 5, }} spacing={1}>
+
                           {loading ? <div className="text-center"> <CircularProgress color="primary" /></div> : <Button onClick={submit} type="submit"  style={{ textDecoration: 'none', 
-                           width: '370px', height: '60px', backgroundColor: '#262626',color: 'white' }}>Sign In</Button>}
+                           width: '305px', height: '60px', backgroundColor: '#103974',color: 'white' }}>Sign In</Button>}
            
-           </Grid>
+
+   </Box>
+</Grid>
+
+   
+
+       
+          
            
           
-   </Grid>
+
          
-   
-   
-       
-       </Grid>
+        
+        
+      </Grid>
+    
     </div>
   )
 }

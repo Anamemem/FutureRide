@@ -1,8 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Macondo&family=PT+Sans&family=Poppins:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Macondo&family=PT+Sans&family=Poppins:ital,wght@0,100;0,700;0,800;1,700&family=Raleway:wght@100&display=swap');
 body{
   overflow-x: hidden;
-  font-family: 'Macondo', cursive;
+  font-family: 'poppins', cursive;
 
+}
+.sew{
+  width: 56px;
+  border: 2px solid #1B1481;
+  height: 0px;
 }
 
 .hw{
@@ -46,10 +52,30 @@ margin-left: 2%;
 .bgr{
   background: #103974;
 box-shadow: 4px 12px 102px 77px rgba(0, 0, 0, 0.25);
-border-radius: 62px;
+
 
 }
 .text1{
+  font-family: 'Poppins', sans-serif;  
+  font-style: normal;
+  font-weight: '800';
+font-size: 49px;
+padding: 15px;
+
+color: #FFFFFF;
+
+}
+.text3{
+  font-family: 'Poppins', sans-serif;  
+  font-style: normal;
+  font-weight: '800';
+font-size: 49px;
+padding: 5px;
+
+color: #FFFFFF;
+
+}
+.text{
   font-family: 'Poppins', sans-serif;  
   font-style: normal;
   font-weight: '800';
@@ -64,13 +90,44 @@ color: #FFFFFF;
 }
 .goods{
   margin-left: 10%;
+  font-family: 'Poppins', sans-serif;  
+  
 }
 .good5{
   margin-left: 17%;
 }
+.tah{
+  font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 22px;
+
+color: #000000;
+}
+.pos{
+  
+font-family: 'Poppins';
+
+font-weight: 600;
+font-size: 15px;
+line-height: 20px;
+
+color: gray;
+}
+.pos1{
+  
+  font-family: 'Poppins';
+  
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+  
+  color: white;
+  }
 @media only screen and (max-width: 600px) {
   .text {
-    font-size: 2px;
+    font-size: 14vw;
     
   }.good5{
     margin-top: 6%;
@@ -79,6 +136,13 @@ color: #FFFFFF;
  
   .hw{
    display: none;
+  }
+  .d {
+    margin-left: 90px;
+
+  }
+  .company{
+    margin-left: 0px;
   }
   .good {
     margin: 0px;
@@ -117,37 +181,45 @@ color: #000000;
 .bras{
   margin-top: '-150px';
 }
-.text{
+.text2{
   font-family: 'Poppins', sans-serif;
-  font-style: normal;
 
-font-size: 49px;
-padding: 15px;
 
-color: #FFFFFF;
-}
-.pat{
-  font-family: 'Raleway', sans-serif;
+font-size: 42px;
+padding: 5px;
+
+color: #000000;
+
 font-style: normal;
-font-weight: 500;
+font-weight: 800;
+
+
+color: #000000;
+
+}
+
+.pat{
+  font-family: 'Poppins', sans-serif;  
+font-style: normal;
+font-weight: 700;
 font-size: 25px;
 line-height: 35px;
 margin-top: 15px;
 color: #000000;
 }
 .d{
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins';
 font-style: normal;
-font-weight: 700;
-font-size: 14px;
-line-height: 30px;
+font-weight: 800;
+font-size: 24px;
+line-height: 20px;
 padding: 15px;
 /* identical to box height */
-color: #FFFFFF;
+color: black;
 
 }
 .de{
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;  
 font-style: normal;
 font-weight: 200;
 font-size: 18px;
@@ -180,26 +252,26 @@ color: #FFFFFF;
 .dsl{
   font-family: 'Poppins', sans-serif;
 font-style: normal;
-font-weight: 700;
+font-weight: 800;
 font-size: 20px;
-line-height: 30px;
-padding: 15px;
+text-align: start;
+padding-left: 5%;
 /* identical to box height */
-color: #FFFFFF;
+color: white;
 }
 .btn{
-  width: 274px;
+  width: 204px;
 height: 70px;
 background: #1B1481;
 font-family: 'Poppins', sans-serif;
 font-style: normal;
-font-weight: 400;
-font-size: 20px;
+font-weight: 600;
+font-size: 16px;
 line-height: 23px;
-
+margin-top: 5%;
 color: #FFFFFF;
 cursor: pointer;
-border: none;
+border-radius: 11px;
 }
 .imgs{
   
@@ -295,6 +367,176 @@ font-size: 18px;
   width: 100%;
   height: auto;
 }
+
+.jb{
+  font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 30px;
+line-height: 36px;
+margin-top: -2%;
+color: #FFFFFF;
+}
+.accept{
+  background: #1B1481;
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+width: 70%;
+height: 49px;
+font-family: 'Raleway';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+cursor: pointer;
+
+color: #FFFFFF;
+
+}
+.decline{
+  width: 70%;
+height: 49px;
+background: #FFFFFF;
+border: 1px solid #1B1481;
+border-radius: 10px;
+font-family: 'Raleway';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+
+
+color: #000000;
+}
+.act{
+  background: #1B1481;
+  width: 100%;
+  font-family: 'Raleway';
+font-style: normal;
+font-weight: 500;
+font-size: 30px;
+line-height: 35px;
+text-align: center;
+color: #FFFFFF;
+
+
+}
+.con{
+  width: 100%;
+  height: 100vh;
+}
+.mew{
+  font-family: 'Raleway';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 38px;
+/* identical to box height */
+
+
+color: #1B1481;
+
+}
+.mewss{
+  font-family: 'Raleway';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 38px;
+/* identical to box height */
+
+
+color: #FFAA05;
+
+
+}
+.mewd{
+  font-family: 'Raleway';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 38px;
+/* identical to box height */
+
+
+color: #181725;
+
+}
+.logs{
+  background-image: url("https://res.cloudinary.com/dekbvdqnb/image/upload/v1653998385/speed-lights-background-video-conference_23-2148613908_1_d10osf.png");
+  width: 100%;
+  height: auto;
+}
+.logs1{
+  background-image: url("https://res.cloudinary.com/dekbvdqnb/image/upload/v1653944900/abstract-futuristic-background-with-3d-design_1361-3532_2_yfa0ex.png");
+  width: 100%;
+  height: auto;
+}
+footer{
+  background-color: #103974;
+  height: 40px;
+  text-align: center;
+  font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 28px;
+
+color: #FFFFFF;
+
+}
+.company{
+  font-family: 'poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 28px;
+margin-top: 10%;
+color: #000000;
+}
+.d{
+  font-family: '';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 2px;
+
+color: #000000;
+
+}
+.in{
+  background: #FFFFFF;
+border: 2px solid #1B1481;
+border-radius: 6px;
+height: 35px;
+font-family: 'Raleway';
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 11px;
+
+color: black;
+}
+.bq{
+  background: #1B1481;
+border-radius: 6px;
+height: 43px;
+width: 20%;
+margin-left: -1%;
+cursor: pointer;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+
+
+color: #FFFFFF;
+
+
+}
+.bgts{
+  background-image: url("https://res.cloudinary.com/dekbvdqnb/image/upload/v1653924575/empty-elegant-background-with-copy-space_24972-1807_2_nucp2q.png");
+  width: 100%;
+  height: auto;
+}
 .texts{
   font-family: '';
 font-style: normal;
@@ -316,4 +558,54 @@ font-size: 30px;
 line-height: 45px;
 text-align: start;
 color: #FFFFFF;
+}
+.eat{
+  font-family: 'Poppins', sans-serif;
+font-size: 13px;
+font-weight: 700;
+  background: #1B1481;
+border-radius: 11px;
+text-align: center;
+align-items: center;
+justify-content: center;
+width: 50%;
+height: 40px;
+color: #FFFFFF;
+cursor: pointer;
+margin-left: 20%;
+}
+p.pes:hover {
+  background-color:  transparent;
+ border: 2px solid #103974;
+  width: 222px;
+  height: 50px;
+  border-radius: 8px;
+}
+.vow{
+  font-family: 'Raleway';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 35px;
+
+color: #000000;
+
+}
+.car{
+  font-family: 'poppins';
+font-style: normal;
+font-weight: bold;
+font-size: 44px;
+line-height: 75px;
+
+color: #000000;
+
+}
+p.pes:hover, p.pes:active {font-size: '250px';}
+.west:hover {
+  height: 480px;
+
+}
+.west {
+  cursor: pointer;
 }

@@ -4,6 +4,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
+import Box from '@mui/material/Box'
 import Nav from '../Component/Nav';
 import { Link } from 'react-router-dom'
 
@@ -12,36 +13,28 @@ function Signup() {
   return (
     <>
     <Nav />
-    <Grid container  >
-    <Grid sx={{  display:{xs:'none', md:'flex'}}} item container    xs={12}  md={6} >
-   
-   <Grid  sx={{px: 8,  pt: 10 }} style={{backgroundColor: '#103974', height:"100vh", width:'120%'}}>
-     
-     <img style={{ height: '100%'}}  src="https://res.cloudinary.com/dekbvdqnb/image/upload/v1653150226/vector-illustration-taxi-service-concept-isometric-3d-composition-cartoon-style-person-with-luggage-standing-near-automobile-smart-phone-with-map-location-sign-call-infographic-elements_165932-1499-re_1.png_om7qjq.png" alt=""/>
-    
-    
-   </Grid>
-
-
-
-  
-
-
-
-</Grid>
-  <Grid  sx={{px:{xs:3,md:10 }}} item container  alignContent="center" xs={12}  md={6}  >
-    <Grid item sx={{pt: 5}}>
-      <h2 className='dew'>Already have an Account?<Link style={{textDecoration: 'none'}} to='/About'><span style={{color: 'lightblue', cursor: 'pointer'}}>LogIn</span></Link> </h2>
-  <h2 className="boys" >
+    <Grid container  sx={{ minHeight: '100vh' }} className='logs1' >
+<Grid item xs={12} sx={{  pt: 9,}}>
+<Box
+        sx={{
+          mx: 'auto',
+          width: 400,
+          height: 470,
+          p: 5,
+        
+          background: 'white'
+         }}>
+ 
+  <p className="boys" >
   Join Us!
-       </h2>
+       </p>
        <p className="freda">to begin this journey ,what type of <br />
 account you’d be opening</p>
- <Link style={{textDecoration: 'none'}} to='/default'>
+<Link style={{textDecoration: 'none'}} to='/signup'>
 
 <List 
       sx={{    width: '90%',  maxWidth: 460 }} 
-      style={{backgroundColor: '#080718', color: 'white', cursor: 'pointer'}}
+      style={{backgroundColor: '#103974', color: 'white', cursor: 'pointer'}}
     >
       <ListItem >
         <ListItemAvatar>
@@ -52,6 +45,7 @@ you activities as a user" />
       </ListItem>
       </List>
  </Link>
+
 
  <Link style={{textDecoration: 'none'}} to='/default'>
 
@@ -68,17 +62,12 @@ you activities as a Transend driver" />
       </ListItem>
       </List>
 </Link>     
- 
- 
-       
-       
-          
 
 
         
          
        
-    </Grid>
+    </Box>
    
         
  </Grid>
