@@ -34,7 +34,7 @@ export default function About(props) {
       setLoading(true);
       await login(data)
         .then(() => {
-          navigate('/user/map')
+          navigate('/user/')
         })
         .catch(e => {
           setError(e.message)

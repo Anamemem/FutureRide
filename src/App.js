@@ -8,7 +8,7 @@ import Nav from './Component/Nav'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import DefaultLayout from './Layouts/Default';
 import Driver from './Layouts/Driver';
-// import User from './Layouts/User';
+import User from './Layouts/User';
 import Profile from './Layouts/Profile';
 import { AuthProvider } from './context/auth';
 import Map from './Layouts/Map';
@@ -41,7 +41,7 @@ function App() {
             <Route path='/rideends' element={<RideEnd />} />
 
             <Route path='/user' element={<UserLayout />} >
-              <Route path='map' element={<Map />} />
+              <Route index element={<Map />} />
               <Route path='order/:id' element={<ShowDriver />} />
             </Route>
 

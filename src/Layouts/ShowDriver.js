@@ -91,7 +91,7 @@ export default function ShowDriver() {
   }, [getDriverLocation])
 
   const endRide = () => {
-    navigate("/user")
+    navigate("/user/")
   }
   const onClick = (e) => {
     getActiveDriver({ lat: 23.2, lng: 23 })

@@ -85,7 +85,7 @@ export default function DriverView() {
   }
 
   const closeRide = () => {
-    navigate("/driver/map")
+    navigate("/driver/")
   }
 
   return (
