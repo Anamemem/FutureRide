@@ -160,10 +160,7 @@ const AddNewCategory = ({ open, close, ...props }) => {
                               <h3>Cash</h3>
                             </Grid>
                           </Grid>
-                          <Link to='/driversprofile'>
-
-                            <button className='eat'  >Request Trycycle</button>
-                          </Link>
+                          
                           <Button fullWidth variant='contained' onClick={placeOrder}> Request {props.title}</Button>
                         </>
               }

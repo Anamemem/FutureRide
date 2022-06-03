@@ -47,7 +47,7 @@ you activities as a user" />
  </Link>
 
 
- <Link style={{textDecoration: 'none'}} to='/default'>
+ <Link style={{textDecoration: 'none'}} to='/signup'>
 
       <List
       sx={{    width: '90%',  maxWidth: 460 ,mt: 5}} 
