@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import MenuIcon from '@mui/icons-material/Menu';
+
 import { Link } from 'react-router-dom';
 
 
@@ -29,7 +29,7 @@ export default function Nav() {
   </Grid>
   <Grid  item xs={12} md={10}   >
  
-  <MenuIcon  style={{color: 'black', paddingLeft: '1000px', cursor: 'pointer'}} />
+
 </Grid>
 </Grid>
           

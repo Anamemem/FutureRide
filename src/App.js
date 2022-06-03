@@ -32,7 +32,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/driver" element={<Driver />} />
             <Route path="/login" element={<About />} />
-            {/* <Route path="/user" element={<User />} /> */}
+             <Route path="/usersignup" element={<User />} /> 
             <Route path="/nav" element={<Nav />} />
             <Route path='/profile' element={<Profile />} />
             <Route path='/DriverHome' element={<DriverHome />} />

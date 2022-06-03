@@ -161,17 +161,17 @@ quick tap</h1>
   </h1></Box>
   </Grid>
         <Grid item xs={12} md={4}sx={{px: 2}}>
-  <Link to='/user'>  
+  <Link to='/usersignup'>  
         <img className='west' style={{width: '100%'}} src='https://res.cloudinary.com/dekbvdqnb/image/upload/v1654005718/Group_1231_kpyh7v.png' alt='' />
   </Link>
         </Grid>
         <Grid item xs={12} md={4} sx={{px: 2}}>
-        <Link to='/user'>  
+        <Link to='/usersignup'>  
         <img className='west' style={{width: '100%'}} src='https://res.cloudinary.com/dekbvdqnb/image/upload/v1653916763/Group_1232_jgtbwy.png' alt='' />
   </Link>
           </Grid>
         <Grid item xs={12} md={4} sx={{px: 2}}>
-        <Link to='/user'>
+        <Link to='/usersignup'>
         <img className='west' style={{width: '100%'}} src='https://res.cloudinary.com/dekbvdqnb/image/upload/v1653920387/Group_1237_bfwgrv.png ' alt='' />
             </Link>
         </Grid>

@@ -18,7 +18,7 @@ export default function DriverHome() {
         <h2 className='text goods'> Make Everyday   <br />Payment        
                                </h2>
 
-                              <Link to='/user'>
+                              <Link to='/usersignup'>
 
 <button className='btn goods'>Sign up to drive </button>
 </Link>                             

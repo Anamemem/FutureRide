@@ -12,6 +12,8 @@ import Avatar from '@mui/material/Avatar';
 import AddNewcategory from './Trycycle'
 import SinglePost from './motoCycle'
 import NewPopup from './newPopup';
+import { AiOutlineCaretUp } from 'react-icons/ai'
+import { BsFillCaretDownFill } from 'react-icons/bs'
 
 import { FaMapMarker, FaTimes } from "react-icons/fa"
 import { getRouteService, reverseGeocoderService } from '../services/map';
@@ -138,7 +140,8 @@ export default function Mapp() {
                 endAdornment: pickUpString && <InputAdornment > <IconButton onClick={() => clearInputString("pickup")}> <FaTimes /> </IconButton> </InputAdornment>
               }}
             />
-            <Button onClick={() => activeSelector = "pickup"}> Set Pickup </Button>
+            <IconButton onClick={() => activeSelector = "pickup"}><AiOutlineCaretUp /></IconButton>
+          
           </Stack>
           <Stack direction={"row"}>
 
@@ -156,13 +159,14 @@ export default function Mapp() {
                 endAdornment: destinationString && <InputAdornment > <IconButton onClick={() => clearInputString("destination")}> <FaTimes /> </IconButton> </InputAdornment>
               }}
             />
-            <Button onClick={() => activeSelector = "destination"}> Set Destination </Button>
+            <IconButton onClick={() => activeSelector = "destination"}><BsFillCaretDownFill /></IconButton>
+           
           </Stack>
           <Stack spacing={3}>
           {
             categories.map((item)=>(
           <Box sx={{border: '1.8px solid lightgray', borderRadius: '5px',maxWidth:"222px" ,
-            ":hover":{border:"1px solid red"}
+            ":hover":{border:"1px solid #1B1481"}
             }}>
             <ListItem onClick={()=>handleAddNewcategory(item)}>
               <ListItemAvatar>
