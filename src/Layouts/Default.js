@@ -1,13 +1,13 @@
 import React from 'react';
 import { useState } from 'react';
-import { TextField,  Button, Alert } from "@mui/material";
+import { TextField,  Button, Alert, Box } from "@mui/material";
 import Grid from '@mui/material/Grid';
 import Nav from '../Component/Nav'
 import InputAdornment from '@mui/material/InputAdornment';
 import { useAuth } from "../context/auth";
 import CircularProgress from '@mui/material/CircularProgress';
 import { useNavigate } from "react-router";
-
+import { Link } from 'react-router-dom'
 
 import "../App.css"
 
@@ -58,55 +58,46 @@ function DefaultLayout() {
     <div>
     <Nav />
      
-        <Grid container  >
+    <Grid container  sx={{ minHeight: '100vh' }} className='logs1' >
+<Grid item xs={12} sx={{  pt: 9,}}>
+<Box
+        sx={{
+          mx: 'auto',
+          width: 400,
+          height: 470,
+          p: 5,
+        
+          background: 'white'
+         }}>
+
+           <h2>Signup for a new account</h2>
           
-        <Grid sx={{  display:{xs:'none', md:'flex'}}} item container    xs={12}  md={6} >
-       
-       <Grid  sx={{px: 8,  pt: 10 }} style={{ height:"100vh", width:'120%'}}>
-      
-         
-         <img style={{ height: '100%'}}  src="https://res.cloudinary.com/dekbvdqnb/image/upload/v1653315118/undraw_joyride_re_968t_1_pb6otf.png
-    " alt=""/>
-        
-        
-       </Grid>
-    
-    
-    
-      
-    
-    
-    
-    </Grid>
-        <Grid  sx={{px:{xs:3,md:20, backgroundColor: 'whitesmoke',minHeight: '100vh' }}} item container  alignContent="center" xs={12}  md={6}
-          >
-          <Grid item > 
-        
-        
-      
-             <p className="fred">For the purpose of regulation,your details <br />
-    are require</p>
-       
-       
-    <form onSubmit={submit}>
+           <form onSubmit={submit}>
       {error && (
               <Alert severity="error">
                 {error}
               </Alert>
             )}
-       
-       
-             
+            <Grid container spacing={2}>
+
+            <Grid item xs={6}>
              <TextField
               fullWidth 
               margin="normal"
               label="Full name" id="fullWidth"
               name="fullname"
               onChange={handleChange} />
-                        
+              </Grid>
+              <Grid item xs={6}>
+             <TextField
+              fullWidth 
+              margin="normal"
+              label="Last Name" id="fullWidth"
+              name="fullname"
+              onChange={handleChange} />
+              </Grid>
        
-       
-       
+            </Grid>
                         <TextField
           id="filled-full-width"
           label="Phone "
@@ -146,23 +137,23 @@ function DefaultLayout() {
            /> 
                
              </form>
-          </Grid>
-          <Grid container
-                 justifyContent="space-evenly"
-                 alignItems="center" item xs={12} sx={{ mt: 3 }} spacing={1}>
-                 {loading ? <div className="text-center"> <CircularProgress color="primary" /></div> : <Button onClick={submit} type="submit"  style={{ textDecoration: 'none', 
-                           width: '370px', height: '60px', backgroundColor: '#262626',color: 'white' }}>Register Account</Button>}
-               
-               </Grid>
-               
-              
-       </Grid>
-             
+             {loading ? <div className="text-center"> <CircularProgress color="primary" /></div> : <Button onClick={submit} type="submit"  style={{ textDecoration: 'none', 
+                           width: '400px', height: '60px', backgroundColor: '#103974',color: 'white' }}>Register Account</Button>}
+   </Box>
+</Grid>
+
+   
+
        
-       
+          
            
-           </Grid>
-        </div>
+          
+
+         
+        
+        
+      </Grid>
+             </div>
   );
 }
 

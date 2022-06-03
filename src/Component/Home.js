@@ -5,10 +5,7 @@ import Grid from '@mui/material/Grid';
 import { Link } from 'react-router-dom'
 
 import '../App.css'
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
+
 import Driver from '../Layouts/Driver';
 
 
@@ -25,10 +22,12 @@ function Home() {
         
                               Relaible Service</h2>
 
-                              <p className='d goods'>Download the App</p>
-                             
+                              <Link to='/DriverHome'>
 
-<img className='rude goods' src='https://res.cloudinary.com/dekbvdqnb/image/upload/v1652704848/download-removebg-preview_1_fnwpd5.png' alt='' />
+<button className='btn goods'>Sign up to drive </button>
+</Link>                             
+
+
         </Grid>
         <Grid item xs={12} md={6} sx={{ display:{xs:'none', md:'flex'}}} >
         <img className='imgs' src='https://res.cloudinary.com/dekbvdqnb/image/upload/v1652957884/smiley-woman-talking-phone-backseat-car-while-having-coffee_23-2148685302_1_igtozb.png' alt='' />  
@@ -105,107 +104,102 @@ function Home() {
         
         
       </Grid>
-      <Grid container sx={{ minHeight: '100vh' }}  className='bgt'  >
+      <Grid container sx={{ minHeight: '100vh' }}  className='bgts'  >
      
       
-  <Grid  item xs={12}>
-  <Box sx={{ textAlign: 'center', m: 1 }} style={{fontFamily: 'Poppins, sans-serif'}}><h1>How does it work?</h1></Box>
-
-  <List
-      sx={{    width: '100%',  maxWidth: 460 }} 
-    >
-      <ListItem className='goods'>
-        <ListItemAvatar>
-          <img  src="https://res.cloudinary.com/dekbvdqnb/image/upload/v1652963335/Group_1201_k7t4zp.png" alt="" />
-        </ListItemAvatar>
-        <ListItemText sx={{px: 2}} primary="Save on Rides" secondary="With inDriver, you can book rides way cheaper! Say no to compulsory rates and high-demand manipulations." />
-      </ListItem>
-      </List>
-      <List
-      sx={{    width: '100%',  maxWidth: 460 }}
-    >
-      <ListItem className='goods'>
-        <ListItemAvatar>
-          <img  src="https://res.cloudinary.com/dekbvdqnb/image/upload/v1652964267/Group_1204_ulemab.png" alt="" />
-        </ListItemAvatar>
-        <ListItemText sx={{px: 2}} primary="Offer your own price" secondary="specify the route and a fair price that you are ready to pay" />
-      </ListItem>
-      </List>
-      <List
-      sx={{    width: '100%',  maxWidth: 460 }}
-    >
-      <ListItem className='goods'>
-        <ListItemAvatar>
-          <img  src="https://res.cloudinary.com/dekbvdqnb/image/upload/v1652965731/Group_1206_bnztvk.png" alt="" />
-        </ListItemAvatar>
-        <ListItemText sx={{px: 2}} primary="Select the best driver offers" secondary="View all the offers that you receive and select the one that suits you best in terms of the price, 
-        vehicle brand, estimated arrival time and driver rating." />
-      </ListItem>
-      </List>
-      <List
-      sx={{    width: '100%',  maxWidth: 460 }}
-    >
-      <ListItem className='goods'>
-        <ListItemAvatar>
-          <img  src="https://res.cloudinary.com/dekbvdqnb/image/upload/v1652966006/Group_1208_yyrxgt.png" alt="" />
-        </ListItemAvatar>
-        <ListItemText sx={{px: 2}} primary="Average vehicles arrival time: 5 minutes" secondary="We will show your driver's your current location on the map" />
-      </ListItem>
-      </List>
-  </Grid>
-</Grid>
-<Grid container sx={{ minHeight: '100vh' }}    alignItems="center" justifyContent= "center">
-
-  <Grid  item xs={12} md={4}sx={{px: 8,mt: 15}} style={{textAlign: 'center'}}>
- 
-<img  className='responsive' style={{marginTop: '-60px'}} src='https://res.cloudinary.com/dekbvdqnb/image/upload/v1653000232/Group_1213_p9meep.png' alt='' />
-         <h2 className='pat' style={{marginTop: '80px'}} >Offer your own price</h2>
-         <p className='de' >Our service payments are always lower than 
-         those of our competitors, averaging at just 9.5%</p>
   
-         
+  <Grid item xs={12} md={6} >
+  <h1 className='text3 goods'>Ready 
+set, <br />
+go, in just a few  <br />
+quick tap</h1>
+<p className='pos goods'>No matter you  Destination , we ‘ll get you  where you need to go</p>
+<p className='pos1 goods'>Get a reliable ride in minutes </p> 
+<p className='pos1 goods'>Know that your driver is wearing a mask</p>  
+<p className='pos1 goods'>Schedule your ride in advance
+</p>
+<Link to='/login'>
+
+<button className='btn goods' style={{marginTop: '-5px'}}>Get a ride </button>
+</Link>                          
   </Grid>
-  <Grid  item xs={12} md={4}sx={{px: 2}} style={{textAlign: 'center'}}>
-
-       
-
- <img  className='responsive' src='https://res.cloudinary.com/dekbvdqnb/image/upload/v1653000244/Group_1203_p3yexm.png' alt='' />
-        <h1 className='pat' >accept requests that make money</h1>
-        <p className='de'>Select the best offers from drivers in terms <br />
-        of the price, vehicle brand and estimated arrival time. Experience true freedom.</p>
-  </Grid>
-  <Grid item xs={12} md={4} sx={{mt: -5}} style={{textAlign: 'center'}}>
-
-
-  <img className='responsive pro' src='https://res.cloudinary.com/dekbvdqnb/image/upload/v1653000261/Group_1202_t2wkrh.png' alt='' />
-       <h2 className='pat bra' style={{marginTop: '-90px'}}>No middlemen</h2>
-       <p className='de '>Get paid directly by passengers at the end of their rides. 
-       There's no need to wait for payments anymore.</p>
+  <Grid item xs={12} md={6} sx={{ display:{xs:'none', md:'flex'}}} >
+<img style={{height: '100vh'}} src='https://res.cloudinary.com/dekbvdqnb/image/upload/v1653927874/Rectangle_tyc8ls.png' alt='' />
   </Grid>
 </Grid>
-<Box sx={{ width: '85%',  
-          mx: 'auto',
-          mb: 10
-           }}>
-<Grid container  sx={{ minHeight: '65vh'}} className='bgr ' >
-        <Grid item xs={12} md={12} style={{textAlign: 'center'}} >
-        
-           <h1 className='text' style={{fontWeight: 'bold'}}>Eazy Register </h1>
-          <p className='dsl' style={{marginTop: "-25px"}}>Complete a simple online registration and get
-           access to ride requests that will make you<br /> money within a day.</p>
-<Link to='/user'>
+<Box >
+      <Grid container sx={{ minHeight: '100vh', width: '100%'}} >
+        <Grid item xs={12} md={7} style={{backgroundColor: '#fff'}} sx={{pt: 5,  minHeight: '100vh' }}  
+        >
+        <h1 className='text2 goods'>Set your own hours. Earn on your own terms.</h1>
 
-<button className='btn'>Become a driver</button>
-</Link>
+                  <h2 className='tah goods'>Reliable earnings</h2>     
+                  <p className='pos goods'>Make money, keep your tips, and cash out when you want</p>  
+                  <h2 className='tah goods'>A flexible schedule:</h2>
+                  <p className='pos goods'>Be your own Boss and drive whenever it works for you</p> 
+                  <h2 className='tah goods'>Get paid instantly</h2>
+                  <p className='pos goods'>Cash out your earnings whenever you want</p>     
+
+                  <Link to='/user'>
+
+<button className='btn goods'>Become a driver </button>
+</Link>                             
         </Grid>
-
-
-        
+        <Grid item xs={12} md={5} sx={{ display:{xs:'none', md:'flex'}}} >
+        <img  style={{width:'100%'}} className='imgs' src='https://res.cloudinary.com/dekbvdqnb/image/upload/v1653921105/handsome-elegant-man-car-salon_1157-30215_1_uachny.png' alt='' />  
+        </Grid>
+      </Grid>
+    </Box>
+    
+ 
+<Grid container  sx={{ minHeight: '100vh', width: '100%'}} className='bgr ' >
+  <Grid xs={12} >
+  <Box sx={{ textAlign: 'start', m: 1 }} className='dsl goods'
+   style={{fontFamily: 'Poppins, sans-serif',fontWeight:'700'}}><h1>We’ve got options to get you where 
+     you’re<br /> going.Choose a ride* that suits your<br />
+   mood and budget.  
+  </h1></Box>
+  </Grid>
+        <Grid item xs={12} md={4}sx={{px: 2}}>
+  <Link to='/user'>  
+        <img className='west' style={{width: '100%'}} src='https://res.cloudinary.com/dekbvdqnb/image/upload/v1654005718/Group_1231_kpyh7v.png' alt='' />
+  </Link>
+        </Grid>
+        <Grid item xs={12} md={4} sx={{px: 2}}>
+        <Link to='/user'>  
+        <img className='west' style={{width: '100%'}} src='https://res.cloudinary.com/dekbvdqnb/image/upload/v1653916763/Group_1232_jgtbwy.png' alt='' />
+  </Link>
+          </Grid>
+        <Grid item xs={12} md={4} sx={{px: 2}}>
+        <Link to='/user'>
+        <img className='west' style={{width: '100%'}} src='https://res.cloudinary.com/dekbvdqnb/image/upload/v1653920387/Group_1237_bfwgrv.png ' alt='' />
+            </Link>
+        </Grid>
+           
+         
         
       </Grid>
-   </Box>
-
-
+      <Grid container >
+        <Grid item xs={12} md={4}   >
+<img className='good  company '  src='https://res.cloudinary.com/dekbvdqnb/image/upload/v1652704037/Asset_2_2_ipuzv2.png' alt='' />
+<p className='good d '>+2348054337851</p>
+<p className='good d '  >hello@futureLabs</p>
+        </Grid>
+        <Grid item xs={12} md={4}  >
+          <h2 className='company good'>Company </h2>
+          <p className='good d '>home</p>
+          <p className='good d ' >about</p>
+          <p className='good  d '>service</p>
+        </Grid>
+        <Grid item xs={12} md={4}  >
+          <h2 className='company good'>Lets Get in Touch</h2>
+          <p className='good  d '> to receive our news letter</p>
+          <input className='in good' type='text' placeholder='enter your email'  /><button className='bq'>Send</button>
+        </Grid>
+      </Grid>
+   
+<footer >Futureride 2022</footer>
+      
     </div>
   );
 }

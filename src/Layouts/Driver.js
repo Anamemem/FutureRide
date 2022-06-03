@@ -37,7 +37,7 @@ function Driver() {
     
     <div className="slide-container">
       <h3>hjghgh gjhg hgjhgj</h3>
-    <Zoom duration = '1000' slidesToShow={1} indicators arrows = {false}>
+    <Zoom duration = '4000' slidesToShow={1} indicators arrows = {false}>
      {slideImages.map((slideImage, index)=> (
         <div  style={{'backgroundImage': `url(${slideImage.url})`,backgroundSize:"cover",minHeight: 'calc(100vh - 64px)'}} className="each-slide nin" key={index}>
           <div >

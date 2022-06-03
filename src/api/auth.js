@@ -12,7 +12,7 @@ export const loginApi = async (data) => {
   try {
     const response = await axios.post(URL + '/login', data)
     if (response.status === 201) {
-      storage.writeData(response.data)
+      storage.writeData(response.data.data)
       return storage.getUser()
     }
     parseError(response)
@@ -85,7 +85,7 @@ const storage = {
   setToken: function () {
     const token = this.getToken()
     const value = token ? `${token}` : ''
-    axios.defaults.headers.common['authorization'] = value
+    axios.defaults.headers.common['Authorization'] = `Bearer ${value}`
   },
 
   getData: function () {
