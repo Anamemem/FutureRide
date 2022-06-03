@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 
 import Nav from '../Component/Nav'
 import { Box, Button, Drawer, Grid } from '@mui/material/';
@@ -11,8 +11,13 @@ import { useNavigate } from 'react-router-dom';
 // import { useAuth } from "../context/auth";
 // import  NewCategory  from './newCatgory'
 
+let interval
 const accessToken =
   'pk.eyJ1IjoiYW5hbWVtZW0iLCJhIjoiY2wzazlpaDR3MGI1azNkcHZudGdldnpoMCJ9.S7c2-Cl457JtyZTKxoUz5A'
+
+  const getAwaitingOrder = async () => {
+   return await  getActiveOrder()
+  }
 
 export default function Earnings() {
   const [orders, setOrders] = useState([])
@@ -36,14 +41,29 @@ export default function Earnings() {
     // })
   }
 
-  const getAwaitingOrder = () => {
-    getActiveOrder().then((data) => {
-      setOrders([...data])
-      console.log(data)
-    }).catch(e => {
-      console.log("getting awatint order", e)
-    })
-  }
+  
+  const getActiveOrder = useCallback(() => {
+    
+    interval = setTimeout(() => {
+      getAwaitingOrder().then((resp) => {
+        setOrders([...resp])
+        getActiveOrder()
+        // getDriverLocation()
+      }).catch((e) => {
+        console.log("no order")
+      })
+    }, 3000)
+  }, [])
+
+
+  useEffect(()=>{
+    getActiveOrder()
+    return ()=>{
+      clearInterval(interval)
+    }
+  },[getActiveOrder])
+
+
 
   const acceptRide = () => {
     acceptRideService(currentOrder?._id, { status: "active" }).then((data) => {

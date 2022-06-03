@@ -40,7 +40,7 @@ const AddNewCategory = ({ open, close, ...props }) => {
         
         if (response?.[0]?.driver?._id) {
           setLoading()
-          navigate('../order')
+          navigate(`../order/${response[0]._id}`)
         } else {
           awaitingDriver()
         }

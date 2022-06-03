@@ -9,9 +9,10 @@ import { getActiveDriver, getOrder } from '../services/driver';
 // import { UpdateLocation } from '../services/resource';
 import { useAuth } from "../context/auth";
 import NewCategory from './newCatgory'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { FaCarAlt, FaMapMarker } from 'react-icons/fa';
 import { getRouteService } from '../services/map';
+import { Button } from 'react-bootstrap';
 
 
 
@@ -21,7 +22,7 @@ import { getRouteService } from '../services/map';
 const accessToken =
   'pk.eyJ1IjoiYW5hbWVtZW0iLCJhIjoiY2wzazlpaDR3MGI1azNkcHZudGdldnpoMCJ9.S7c2-Cl457JtyZTKxoUz5A'
 
-const pageStatus = "pending"
+// let pageStatus = "pending"
 let interval
 const getRoute = async (order) => {
   return await getRouteService(order.pickUp, order.destination)
@@ -40,13 +41,14 @@ export default function ShowDriver() {
 
   const { currentUser } = useAuth()
   const { id } = useParams()
+  const navigate = useNavigate()
   console.log(currentUser)
 
   const [spinner, setSpinner] = useState(true);
 
   // It will be executed before rendering
 
-  console.log(orderStatus, setSpinner)
+  console.log(orderStatus,spinner,setDriver, setSpinner)
   useEffect(() => {
     setLoading(true)
     getOrder({ id: id }).then(async (response) => {
@@ -68,10 +70,10 @@ export default function ShowDriver() {
 
     interval = setTimeout(() => {
       getActiveDriver({ user: order?.driver._id }).then((resp) => {
-        if (resp.status === "engaged" && pageStatus === "pending") {
-          setOrderStatus("engaged")
+        let driver = resp[0]
+        if(driver?._id){
+          setOrderStatus("completed")
         }
-        setDriver({ ...resp })
         getDriverLocation()
       }).catch((e) => {
 
@@ -80,7 +82,7 @@ export default function ShowDriver() {
   }, [order?.driver?._id])
 
   useEffect(() => {
-    // getDriverLocation()
+    getDriverLocation()
     return () => {
       if (interval) {
         clearTimeout(interval)
@@ -88,12 +90,14 @@ export default function ShowDriver() {
     }
   }, [getDriverLocation])
 
-
+  const endRide = () => {
+    navigate("/user")
+  }
   const onClick = (e) => {
     getActiveDriver({ lat: 23.2, lng: 23 })
     console.log(e)
   }
-  return  (
+  return (
     <>
       <Nav />
       <Grid container minHeight="100vh">
@@ -103,7 +107,8 @@ export default function ShowDriver() {
             loading
               ? <CircularProgress />
               : order._id
-                ? <>
+                ?
+                <>
                   <img src='https://res.cloudinary.com/dekbvdqnb/image/upload/v1654182701/Group_1244_jjsncc.png' alt='' />
                   <h3 className='jb'>{order.driver.fullname}  </h3>
                   <h3 className='jb'>{order.driver.phone}  </h3>
@@ -116,8 +121,16 @@ export default function ShowDriver() {
                     justifyContent="flex-end"
                     spacing={2}
                   >
-                    <img style={{ cursor: 'pointer' }} onClick={handleNewCategory} src='https://res.cloudinary.com/dekbvdqnb/image/upload/v1654189832/image_15_ljhfhw.png' alt='' />
-                    <p onClick={handleNewCategory} style={{ fontSize: '18px', fontWeight: '600', cursor: 'pointer' }}>Cancel</p>
+                    {
+                      orderStatus === "completed"
+                        ?
+                        <Button onClick={endRide} variant="contained"> Rate Driver  </Button>
+                        :
+                        <>
+                          <img style={{ cursor: 'pointer' }} onClick={handleNewCategory} src='https://res.cloudinary.com/dekbvdqnb/image/upload/v1654189832/image_15_ljhfhw.png' alt='' />
+                          <p onClick={handleNewCategory} style={{ fontSize: '18px', fontWeight: '600', cursor: 'pointer' }}>Cancel</p>
+                        </>
+                    }
                   </Stack>
                 </>
                 : <h2> Nothing found</h2>
@@ -155,14 +168,14 @@ export default function ShowDriver() {
             }
 
             {
-              order?.pickUp.lat&&<Marker longitude={order.pickUp.lng} latitude={order.pickUp.lat} anchor="bottom" >
-              <FaMapMarker size={40} />
-            </Marker>
+              order?.pickUp?.lat && <Marker longitude={order.pickUp.lng} latitude={order.pickUp.lat} anchor="bottom" >
+                <FaMapMarker size={40} />
+              </Marker>
             }
             {
-              order?.pickUp.lat&&<Marker longitude={order.destination.lng} latitude={order.destination.lat} anchor="bottom" >
-              <FaMapMarker color='#fafa' size={40} />
-            </Marker>
+              order?.pickUp?.lat && <Marker longitude={order.destination.lng} latitude={order.destination.lat} anchor="bottom" >
+                <FaMapMarker color='#fafa' size={40} />
+              </Marker>
             }
             {
               driver?._id && <Marker longitude={driver.location.lng} latitude={driver.location.lat} anchor="bottom" >

@@ -4,9 +4,9 @@ import Nav from '../Component/Nav'
 import { Button, CircularProgress, Grid } from '@mui/material/';
 import Map, { Layer, Marker, Source } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { getActiveDriver, getOrder, UpdateLocation } from '../services/driver';
+import { getActiveDriver, getOrder, UpdateLocation, updateOrderService } from '../services/driver';
 import { getRouteService } from '../services/map';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { FaMapMarker } from 'react-icons/fa';
 //   import { UpdateLocation } from '../services/resource';
 // import { useAuth } from "../context/auth";
@@ -37,20 +37,22 @@ const getRoute = async (order) => {
 }
 
 export default function DriverView() {
+
+
   const [order, setOrder] = useState({})
   const [orderStatus, setOrderStatus] = useState("pending")
   const [routeGeoson, setRouteGeoson] = useState({})
   // const [driver, setDriver] = useState({})
   const [loading, setLoading] = useState(false)
-
+  const navigate = useNavigate()
   const { id } = useParams()
 
 
   useEffect(() => {
     setLoading(true)
     getOrder({ id: id }).then(async (response) => {
-      const routeGeoson = await getRoute(response[0]).then(resp=>{
-        setRouteGeoson({...resp})
+      await getRoute(response[0]).then(resp => {
+        setRouteGeoson({ ...resp })
       }).catch(e => {
         console.log("getting driver error",)
       })
@@ -62,18 +64,28 @@ export default function DriverView() {
     })
   }, [id]);
 
-  const updateStatus = () => {
+  const updateStatus = (type = "engaged") => {
+    type = type === "active" ? "active" : "engaged"
     UpdateLocation({
       location: {
-        lat: order.pickUp.lat,
-        lng: order.pickUp.lng,
+        lat: order.pickUp.lat + 0.001,
+        lng: order.pickUp.lng + 0.001,
         text: order.pickUp.text
-      }, status: "engaged"
+      }, status: type
     }).then(() => {
-      setOrderStatus("active")
-    }).catch((e) => {
+      setOrderStatus(type === "active" ? "completed" : "active")
+    }).catch((e) => { })
+  }
 
-    })
+  const endRide = () => {
+    updateOrderService(order._id, { status: "completed" }).then(() => {
+      updateStatus("active")
+      setOrderStatus("completed")
+    }).catch((e) => { })
+  }
+
+  const closeRide = () => {
+    navigate("/driver/map")
   }
 
   return (
@@ -99,15 +111,15 @@ export default function DriverView() {
                     orderStatus === "pending"
                       ? <Button onClick={updateStatus}> Pick up {order.user.fullName} </Button>
                       : orderStatus === "active"
-                        ? <Button onClick={updateStatus}> End up </Button>
-                        : <Button onClick={updateStatus}> Submit </Button>
+                        ? <Button onClick={endRide}> End Ride </Button>
+                        : <Button onClick={closeRide}> Submit </Button>
                   }
                 </>
 
                 : <h2> Failed to load data</h2>
           }
         </Grid>
-        <Grid item sx={12} md={9} overflow='hidden'   minHeight={"80vh"}  >
+        <Grid item sx={12} md={9} overflow='hidden' minHeight={"80vh"}  >
           <Map
             onClick={onClick}
             mapStyle="mapbox://styles/mapbox/streets-v9"
@@ -122,35 +134,31 @@ export default function DriverView() {
               zoom: 14,
             }}
           >
-            <Marker longitude={7.7145} latitude={5.1744} anchor="bottom" >
-              <img src="./pin.png" alt='' />
-              {/* <h2>78</h2> */}
-            </Marker>
             {
-              order?.pickUp.lat&&<Marker longitude={order.pickUp.lng} latitude={order.pickUp.lat} anchor="bottom" >
-              <FaMapMarker size={40} />
-            </Marker>
+              order?.pickUp?.lat && <Marker longitude={order.pickUp.lng} latitude={order.pickUp.lat} anchor="bottom" >
+                <FaMapMarker size={40} />
+              </Marker>
             }
             {
-              order?.pickUp.lat&&<Marker longitude={order.destination.lng} latitude={order.destination.lat} anchor="bottom" >
-              <FaMapMarker color='#fafa' size={40} />
-            </Marker>
+              order?.pickUp?.lat && <Marker longitude={order.destination.lng} latitude={order.destination.lat} anchor="bottom" >
+                <FaMapMarker color='#fafa' size={40} />
+              </Marker>
             }
-          {
-            routeGeoson.features &&
-            <Source id="polylineLayer" type="geojson" data={routeGeoson}>
-              <Layer id="lineLayer" type="line" source="my-data"
-                layout={{
-                  "line-join": "round",
-                  "line-cap": "round"
-                }}
-                paint={{
-                  "line-color": "#1B1481",
-                  "line-width": 5
-                }}
-              />
-            </Source>
-          }
+            {
+              routeGeoson.features &&
+              <Source id="polylineLayer" type="geojson" data={routeGeoson}>
+                <Layer id="lineLayer" type="line" source="my-data"
+                  layout={{
+                    "line-join": "round",
+                    "line-cap": "round"
+                  }}
+                  paint={{
+                    "line-color": "#1B1481",
+                    "line-width": 5
+                  }}
+                />
+              </Source>
+            }
           </Map>
 
         </Grid>
