@@ -111,16 +111,12 @@ export default function Earnings() {
             <span style={{ color: 'white', fontSize: '16px', fontWeight: '400' }}> {currentOrder?.destination?.text} </span></p>
           <Grid container spacing={1}>
             <Grid item xs={12}>
-              <Button onClick={() => acceptRide()}>
-                Accept
-              </Button>
+             
               <button onClick={() => acceptRide()}className='accept'>Accept</button>
 
             </Grid>
             <Grid item xs={12}>
-              <Button onClick={() => setDrawer(false)}>
-                Ignore
-              </Button>
+            
               <button onClick={() => setDrawer(false)}className='decline'>Ignore</button>
 
             </Grid>

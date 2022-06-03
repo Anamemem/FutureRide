@@ -4,7 +4,7 @@ import Nav from '../Component/Nav'
 // import Grid from '@mui/material/Grid';
 import Map, { Layer, Marker, Source } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { Box, Button, Grid, IconButton, InputAdornment, Stack, TextField } from '@mui/material';
+import { Box, Grid, IconButton, InputAdornment, Stack, TextField } from '@mui/material';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
@@ -146,14 +146,15 @@ export default function Mapp() {
           <Stack direction={"row"}>
 
             <TextField
-              label="Enter a drop off location"
+              label=""
               id="outlined-size-small"
               size="small"
+              value={destinationString}
               margin="normal"
               sx={{
                 "& input.Mui-disabled":{color:"red"}
               }}
-              value={destinationString}
+              
               disabled
               InputProps={{
                 endAdornment: destinationString && <InputAdornment > <IconButton onClick={() => clearInputString("destination")}> <FaTimes /> </IconButton> </InputAdornment>

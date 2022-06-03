@@ -9,7 +9,7 @@ import CardContent from '@mui/material/CardContent'
 import "../App.css"
 // import  NewCategory  from './newCatgory'
 import CloseIcon from '@mui/icons-material/Close';
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { createOrderService, getOrder, updateOrderService } from '../services/driver';
 import { FaTimes } from 'react-icons/fa';
 

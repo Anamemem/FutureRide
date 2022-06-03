@@ -42,11 +42,11 @@ export default function ShowDriver() {
   const { id } = useParams()
   console.log(currentUser)
 
-  const [spinner, setSpinner] = useState(true);
+  // const [spinner, setSpinner] = useState(true);
 
   // It will be executed before rendering
 
-  console.log(orderStatus, setSpinner)
+  // console.log(orderStatus, setSpinner)
   useEffect(() => {
     setLoading(true)
     getOrder({ id: id }).then(async (response) => {
